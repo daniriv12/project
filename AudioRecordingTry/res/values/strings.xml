@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">AudioRecordingTry</string>
+    <string name="text">Here you can record your voice!</string>
+    <string name="stopr">Stop recording</string>
+    <string name="playr">Play recording</string>
+    <string name="startr">Start recording</string>
+    <string name="stopp">Stop playback</string>
+
+</resources>
