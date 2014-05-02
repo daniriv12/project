@@ -10,6 +10,7 @@ import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -81,8 +82,10 @@ public class AudioProcessing extends Activity implements OnClickListener{
 
                 // started = true; hopes this should true before calling
                 // following while loop
-
+                
                 while (started) {
+                	
+                	
                     int bufferReadResult = audioRecord.read(buffer, 0,
                             blockSize);
 
@@ -91,9 +94,8 @@ public class AudioProcessing extends Activity implements OnClickListener{
                                                                         // 16
                     }                                       // bit
                         transformer.ft(toTransform);
-                        Log.e("HZ values", toTransform[0] + " ");
-                        Log.e("HZ values2", 1 * 8000/toTransform[1] + " ");
-                        Log.e("HZ values3", toTransform[2] + " ");
+                        Log.e("HZ values",  findBiggest(toTransform)  * 8000/toTransform.length + " ");
+
                         publishProgress(toTransform);
 
 
@@ -131,18 +133,72 @@ public class AudioProcessing extends Activity implements OnClickListener{
 
     }
 
-
+    public int findBiggest(double[] toTransform){
+    	double biggest = 0;
+    	int biggestIndex = 0;
+    	
+    
+    	for (int index = 0; index < toTransform.length ; index++){
+    		if (toTransform[index] > biggest){
+    			biggest = toTransform[index];
+    			biggestIndex = index;
+    		}
+    		
+    		
+    	}
+    	
+    	return biggestIndex;
+    }
+    
+//    
+//    public void onClick(View arg0 ){
+//    	
+//    	startStopButton.setText("Wait");
+//    	recordTask = new RecordAudio();
+//    	recordTask.execute();
+//    	
+//    	new CountDownTimer(5000, 1000) {
+//    		
+//    		public void onTick(long millisUntilFinished){
+//    			startStopButton.setText("" + millisUntilFinished);
+//    		}
+//    		
+//    		public void onFinish(){
+//    			recordTask.cancel(true);
+//    		}
+//    	
+//    }.start();
+//    	
+//    }
+//    
+    
     public void onClick(View arg0) {
+    	
         // TODO Auto-generated method stub
         if (started) {
             started = false;
+            
             startStopButton.setText("Start");
             recordTask.cancel(true);
         } else {
+        	}
             started = true;
-            startStopButton.setText("Stop");
+            startStopButton.setText("Sing!");
             recordTask = new RecordAudio();
             recordTask.execute();
+            new CountDownTimer (5000, 1000){
+            	
+            	public void onTick(long millisUntilFinished){
+          
+            	}
+            	
+            	public void onFinish(){
+            		started = false;
+            		startStopButton.setText("Start");
+            				
+            		recordTask.cancel(true);
+            	}
+            
+            }.start();
         }
     }
-}
