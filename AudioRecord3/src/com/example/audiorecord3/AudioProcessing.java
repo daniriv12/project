@@ -1,5 +1,7 @@
 package com.example.audiorecord3;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -61,6 +63,8 @@ public class AudioProcessing extends Activity implements OnClickListener{
     }
 
     public class RecordAudio extends AsyncTask<Void, double[], Void> {
+    	
+    	private ArrayList<Double> frequencies;
 
         @Override
         protected Void doInBackground(Void... arg0) {
@@ -95,9 +99,13 @@ public class AudioProcessing extends Activity implements OnClickListener{
                     }                                       // bit
                         transformer.ft(toTransform);
                         Log.e("HZ values",  findBiggest(toTransform)  * 8000/toTransform.length + " ");
-
+                        
                         publishProgress(toTransform);
-
+                        
+                        frequencies.add((double)(findBiggest(toTransform)  * 8000/toTransform.length));
+                        
+                        
+                        
 
 
                 }
@@ -111,7 +119,12 @@ public class AudioProcessing extends Activity implements OnClickListener{
             }
             return null;
         }
-
+        
+        public ArrayList<Double> getFrequencies(){
+        	return frequencies;
+        	
+        }
+        
         @Override
         protected void onProgressUpdate(double[]... toTransform) {
 
@@ -127,7 +140,7 @@ public class AudioProcessing extends Activity implements OnClickListener{
 
             imageView.invalidate();
 
-            // TODO Auto-generated method stub
+            // Auto-generated method stub
             // super.onProgressUpdate(values);
         }
 
@@ -174,7 +187,7 @@ public class AudioProcessing extends Activity implements OnClickListener{
     
     public void onClick(View arg0) {
     	
-        // TODO Auto-generated method stub
+
         if (started) {
             started = false;
             
