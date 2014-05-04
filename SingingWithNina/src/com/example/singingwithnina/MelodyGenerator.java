@@ -1,7 +1,9 @@
 package com.example.singingwithnina;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Random;
+
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,6 +15,7 @@ import android.media.SoundPool;
 import android.media.AudioManager;
 import android.view.View.OnClickListener;
 import android.os.CountDownTimer;
+import android.util.Log;
 
 public class MelodyGenerator extends Activity {
 
@@ -26,6 +29,7 @@ public class MelodyGenerator extends Activity {
 	private int G1;
 	private int A1;
 	private int B1;
+	private ArrayList<Double> frequencies = new ArrayList<Double>(); 
 
 	private int streamID;
 	
@@ -70,33 +74,44 @@ public class MelodyGenerator extends Activity {
 
 				     public void onFinish() {
 							soundPool.stop(streamID);
+							ArrayList<Double> frequency = generateListReadyForGraphing(frequencies); //frequency is the array for graphing
+							Log.e("tones", + frequencies.get(0) + " "+ frequencies.get(1) + " "+ frequencies.get(2) + " "+ frequencies.get(3) + " ");
 				     }
 				  }.start();
 				  
 			}
 			
+			
 			public void NextTone() {
 				Random r = new Random();
 				int rnd = r.nextInt(6);
 				switch(rnd) {
-					case 0: streamID = soundPool.play(C1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 0: frequencies.add(261.63);
+							streamID = soundPool.play(C1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
-					case 1: streamID = soundPool.play(D1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 1: frequencies.add(293.66);
+							streamID = soundPool.play(D1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
-					case 2: streamID = soundPool.play(E1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 2: frequencies.add(329.63);
+							streamID = soundPool.play(E1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
-					case 3: streamID = soundPool.play(F1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 3: frequencies.add(349.23);
+							streamID = soundPool.play(F1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
-					case 4: streamID = soundPool.play(G1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 4: frequencies.add(392.00);
+							streamID = soundPool.play(G1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
-					case 5: streamID = soundPool.play(A1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 5: frequencies.add(440.00);
+							streamID = soundPool.play(A1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
-					case 6: streamID = soundPool.play(B1, 1.0f, 1.0f, 0, 0, 1.0f);
+					case 6: frequencies.add(493.88);
+							streamID = soundPool.play(B1, 1.0f, 1.0f, 0, 0, 1.0f);
 							break;
 				}
 			}
 
 		});
+		
 		
 		StopButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -105,5 +120,21 @@ public class MelodyGenerator extends Activity {
 				soundPool.stop(streamID);
 			}
 		});
+	}
+	private ArrayList<Double> generateListReadyForGraphing(ArrayList<Double> frequency){ 
+		ArrayList<Double> output = new ArrayList<Double>();
+		for(int i = 0; i < frequency.size(); i++ ){
+			if(i == frequency.size() - 1){ // because the last tone is double time
+				for(int index = 0; index < 88; index++){
+					output.add(frequency.get(i));
+				}
+			}
+			else{
+				for(int index = 0; index < 44; index++){
+					output.add(frequency.get(i));
+				}
+			}
+		}
+		return output;
 	}
 }
