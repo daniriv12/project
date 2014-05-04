@@ -1,7 +1,5 @@
 package com.example.audiorecord3;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -63,8 +61,6 @@ public class AudioProcessing extends Activity implements OnClickListener{
     }
 
     public class RecordAudio extends AsyncTask<Void, double[], Void> {
-    	
-    	private ArrayList<Double> frequencies;
 
         @Override
         protected Void doInBackground(Void... arg0) {
@@ -97,15 +93,28 @@ public class AudioProcessing extends Activity implements OnClickListener{
                         toTransform[i] = (double) buffer[i] / 32768.0; // signed
                                                                         // 16
                     }                                       // bit
-                        transformer.ft(toTransform);
-                        Log.e("HZ values",  findBiggest(toTransform)  * 8000/toTransform.length + " ");
-                        
+                        double[] fft = new double[toTransform.length];
+                        for(int i=0; i<toTransform.length;i++){
+                        	if(i % 2 == 0){
+                        		fft[i] = toTransform[i];
+                        	}
+                        	else{
+                        		fft[i] = 0;
+                        	}
+                        }
+                    	transformer.ft(fft);
+                    	double[] magnitude = new double[toTransform.length/2];
+                    	for(int i = 0; i < magnitude.length-1; i++){
+                    		double re = fft[i];
+                    		double im = fft[i+1];
+                    		magnitude[i] = Math.sqrt(re*re+im*im);
+                    	}
+                    	transformer.ft(toTransform);
+                        Log.e("HZ values new",  findBiggest(magnitude)  * 8000/toTransform.length + " ");
+                        Log.e("HZ values old",  findBiggest(toTransform)  * 8000/toTransform.length + " ");
+
                         publishProgress(toTransform);
-                        
-                        frequencies.add((double)(findBiggest(toTransform)  * 8000/toTransform.length));
-                        
-                        
-                        
+
 
 
                 }
@@ -119,12 +128,7 @@ public class AudioProcessing extends Activity implements OnClickListener{
             }
             return null;
         }
-        
-        public ArrayList<Double> getFrequencies(){
-        	return frequencies;
-        	
-        }
-        
+
         @Override
         protected void onProgressUpdate(double[]... toTransform) {
 
@@ -140,7 +144,7 @@ public class AudioProcessing extends Activity implements OnClickListener{
 
             imageView.invalidate();
 
-            // Auto-generated method stub
+            // TODO Auto-generated method stub
             // super.onProgressUpdate(values);
         }
 
@@ -187,7 +191,7 @@ public class AudioProcessing extends Activity implements OnClickListener{
     
     public void onClick(View arg0) {
     	
-
+        // TODO Auto-generated method stub
         if (started) {
             started = false;
             
