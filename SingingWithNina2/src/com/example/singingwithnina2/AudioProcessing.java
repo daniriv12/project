@@ -1,5 +1,7 @@
 package com.example.singingwithnina2;
 
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -11,6 +13,7 @@ import android.media.MediaRecorder;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 
 import android.widget.Button;
@@ -27,6 +30,7 @@ public class AudioProcessing extends Activity{
     int blockSize = 256;
     
     PlaySingActivity parent;
+    Handler handler;
 
     boolean started = false;
 
@@ -35,10 +39,11 @@ public class AudioProcessing extends Activity{
 
     //AudioRecord audioRecord;
 
-    public AudioProcessing(final PlaySingActivity parent) {
+    public AudioProcessing(final PlaySingActivity parent, Handler handler) {
 
         transformer = new RealDoubleFFT(blockSize);
         this.parent = parent;
+        this.handler = handler;
 
 
     }
@@ -96,7 +101,7 @@ public class AudioProcessing extends Activity{
                         Log.e("HZ values new",  findBiggest(magnitude)  * 8000/toTransform.length + " ");
                         Log.e("HZ values old",  findBiggest(toTransform)  * 8000/toTransform.length + " ");
 
-                        parent.publishProgress(toTransform);
+                        postToUI(toTransform);
 
 
 
@@ -130,6 +135,14 @@ public class AudioProcessing extends Activity{
     	
     	return biggestIndex;
     }
+    
+    private void postToUI(final double[] toTransform) {
+		handler.post(new Runnable() {
+			public void run() {
+				parent.publishProgress();
+			}
+		});
+    }
       
     
     public void sing(){
@@ -148,6 +161,6 @@ public class AudioProcessing extends Activity{
         	}
         
         }.start();
-    }
     
     }
+}

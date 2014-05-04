@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class PlaySingActivity extends Activity{
 	private AudioProcessing audioProcessor;
 	
 	
+	
 	ImageView iv;
     Bitmap bitmap;
     Canvas canvas;
@@ -36,7 +38,7 @@ public class PlaySingActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_playsing);
 		melodyGenerator = new MelodyGenerator();
-		audioProcessor = new AudioProcessing(this);
+		audioProcessor = new AudioProcessing(this, new Handler());
 		alreadyPlayed = false;
 
 	
@@ -74,7 +76,7 @@ public class PlaySingActivity extends Activity{
 	}
 	
 
-    protected void publishProgress(double[]... toTransform) {
+    protected void publishProgress(final double[]... toTransform) {
 
         canvas.drawColor(Color.BLACK);
 
@@ -87,10 +89,9 @@ public class PlaySingActivity extends Activity{
         }
 
         iv.invalidate();
-
-        // TODO Auto-generated method stub
-        // super.onProgressUpdate(values);
     }
+
+    
 	
 
 
