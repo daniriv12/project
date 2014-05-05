@@ -139,7 +139,7 @@ public class AudioProcessing extends Activity{
     private void postToUI(final double[] toTransform) {
 		handler.post(new Runnable() {
 			public void run() {
-				parent.publishProgress();
+				parent.publishProgress(toTransform);
 			}
 		});
     }
