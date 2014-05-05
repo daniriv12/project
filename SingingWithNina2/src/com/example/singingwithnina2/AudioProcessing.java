@@ -98,10 +98,11 @@ public class AudioProcessing extends Activity{
                     		magnitude[i] = Math.sqrt(re*re+im*im);
                     	}
                     	transformer.ft(toTransform);
-                        Log.e("HZ values new",  findBiggest(magnitude)  * 8000/toTransform.length + " ");
-                        Log.e("HZ values old",  findBiggest(toTransform)  * 8000/toTransform.length + " ");
+                    	Integer frequency = findBiggest(magnitude) * 8000/toTransform.length;
+                        Log.e("HZ values new",  frequency + " ");
 
-                        postToUI(toTransform);
+
+                        postToUI(frequency, toTransform);
 
 
 
@@ -136,10 +137,10 @@ public class AudioProcessing extends Activity{
     	return biggestIndex;
     }
     
-    private void postToUI(final double[] toTransform) {
+    private void postToUI(final Integer frequency, final double[] toTransform) {
 		handler.post(new Runnable() {
 			public void run() {
-				parent.publishProgress(toTransform);
+				parent.publishProgress(frequency, toTransform);
 			}
 		});
     }

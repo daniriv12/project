@@ -12,6 +12,7 @@ import android.media.SoundPool;
 import android.media.AudioManager;
 
 import android.os.CountDownTimer;
+import android.util.Log;
 
 
 public class MelodyGenerator extends Activity {
@@ -26,7 +27,7 @@ public class MelodyGenerator extends Activity {
 	private int B1;
 	
 	private ArrayList<Integer> generatedMelody;
-	private ArrayList<Double> freq;
+	private ArrayList<Integer> freq;
 
 
 	private int streamID;
@@ -36,7 +37,7 @@ public class MelodyGenerator extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		generatedMelody = new ArrayList<Integer>();
-		freq = new ArrayList<Double>();
+		freq = new ArrayList<Integer>();
 
 		soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
 
@@ -53,31 +54,66 @@ public class MelodyGenerator extends Activity {
 	}
 			
 			
-		public double NextTone() {
+		public Integer NextTone() {
 			Random r = new Random();
 			int rnd = r.nextInt(6);
 			switch(rnd) {
-				case 0: generatedMelody.add(0);
-						streamID = soundPool.play(C1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 261.63;
-				case 1: generatedMelody.add(1);
-						streamID = soundPool.play(D1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 293.66;
-				case 2: generatedMelody.add(2);
-						streamID = soundPool.play(E1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 329.63;
-				case 3: generatedMelody.add(3);
-						streamID = soundPool.play(F1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 349.23;
-				case 4: generatedMelody.add(4);
-						streamID = soundPool.play(G1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 392.00;
-				case 5: generatedMelody.add(5);
-						streamID = soundPool.play(A1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 440.00;
-				case 6: generatedMelody.add(6);
-						streamID = soundPool.play(B1, 1.0f, 1.0f, 0, 0, 1.0f);
-						return 493.88;
+				case 0: try {
+					generatedMelody.add(0);
+							streamID = soundPool.play(C1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 262;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
+				case 1: try {
+					generatedMelody.add(1);
+							streamID = soundPool.play(D1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 294;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
+				case 2: try {
+					generatedMelody.add(2);
+							streamID = soundPool.play(E1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 330;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
+				case 3: try {
+					generatedMelody.add(3);
+							streamID = soundPool.play(F1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 349;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
+				case 4: try {
+					generatedMelody.add(4);
+							streamID = soundPool.play(G1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 392;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
+				case 5: try {
+					generatedMelody.add(5);
+							streamID = soundPool.play(A1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 440;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
+				case 6: try {
+					generatedMelody.add(6);
+							streamID = soundPool.play(B1, 1.0f, 1.0f, 0, 0, 1.0f);
+							return 494;
+				} catch (NullPointerException e) {
+					Log.e("Null","Its the fucking tones!");
+					e.printStackTrace();
+				}
 			}
 			return -1;
 		}
@@ -102,7 +138,7 @@ public class MelodyGenerator extends Activity {
 		}
 	
 			
-	public ArrayList<Double> randomPlay(){
+	public ArrayList<Integer> randomPlay(){
 		new CountDownTimer(5000, 1000) {
 
 		     public void onTick(long millisUntilFinished) {

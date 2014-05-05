@@ -22,9 +22,10 @@ import com.example.singingwithnina2.AudioProcessing;
 public class PlaySingActivity extends Activity{
 	
 	private MelodyGenerator melodyGenerator;
-	private ArrayList<Double> genFreq;
+	private ArrayList<Integer> genFreq;
 	private Boolean alreadyPlayed;
 	private AudioProcessing audioProcessor;
+	private ArrayList<Integer> realFreq;
 	
 	
 	
@@ -40,6 +41,8 @@ public class PlaySingActivity extends Activity{
 		melodyGenerator = new MelodyGenerator();
 		audioProcessor = new AudioProcessing(this, new Handler());
 		alreadyPlayed = false;
+		realFreq = new ArrayList<Integer>();
+		genFreq = new ArrayList<Integer>();
 
 	
 		Button stop = (Button) this.findViewById(R.id.stopButton);
@@ -76,8 +79,8 @@ public class PlaySingActivity extends Activity{
 	}
 	
 
-    protected void publishProgress(final double[]... toTransform) {
-
+    protected void publishProgress(final Integer frequency, final double[]... toTransform) {
+    	realFreq.add(frequency);
         canvas.drawColor(Color.BLACK);
 
         for (int i = 0; i < toTransform[0].length; i++) {
@@ -90,6 +93,22 @@ public class PlaySingActivity extends Activity{
 
         iv.invalidate();
     }
+    private ArrayList<Integer> generateListReadyForGraphing(ArrayList<Integer> frequency){ 
+		ArrayList<Integer> output = new ArrayList<Integer>();
+		for(int i = 0; i < frequency.size(); i++ ){
+			if(i == frequency.size() - 1){ // because the last tone is double time
+				for(int index = 0; index < 88; index++){
+					output.add(frequency.get(i));
+				}
+			}
+			else{
+				for(int index = 0; index < 44; index++){
+					output.add(frequency.get(i));
+				}
+			}
+		}
+		return output;
+	}
 
     
 	
