@@ -38,7 +38,7 @@ public class PlaySingActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_playsing);
-		melodyGenerator = new MelodyGenerator();
+		melodyGenerator = new MelodyGenerator(this);
 		audioProcessor = new AudioProcessing(this, new Handler());
 		alreadyPlayed = false;
 		realFreq = new ArrayList<Integer>();
@@ -68,6 +68,7 @@ public class PlaySingActivity extends Activity{
 				alreadyPlayed = true;
 				genFreq = melodyGenerator.randomPlay();
 			}
+			break;
 			
 		case R.id.singButton:
 			audioProcessor.sing();

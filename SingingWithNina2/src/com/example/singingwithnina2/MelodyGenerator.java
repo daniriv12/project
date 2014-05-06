@@ -15,7 +15,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 
 
-public class MelodyGenerator extends Activity {
+public class MelodyGenerator{
 
 	private SoundPool soundPool;
 	private int C1;
@@ -32,22 +32,22 @@ public class MelodyGenerator extends Activity {
 
 	private int streamID;
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+
+	public MelodyGenerator(Activity activity){
 		
 		generatedMelody = new ArrayList<Integer>();
 		freq = new ArrayList<Integer>();
-
+		
 		soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
 
-		C1 = soundPool.load(this, R.raw.c1, 1);
-		D1 = soundPool.load(this, R.raw.d1, 1);
-		E1 = soundPool.load(this, R.raw.e1, 1);
-		F1 = soundPool.load(this, R.raw.f1, 1);
-		G1 = soundPool.load(this, R.raw.g1, 1);
-		A1 = soundPool.load(this, R.raw.a1, 1);
-		B1 = soundPool.load(this, R.raw.b1, 1);
+		C1 = soundPool.load(activity, R.raw.c1, 1);
+		D1 = soundPool.load(activity, R.raw.d1, 1);
+		E1 = soundPool.load(activity, R.raw.e1, 1);
+		F1 = soundPool.load(activity, R.raw.f1, 1);
+		G1 = soundPool.load(activity, R.raw.g1, 1);
+		A1 = soundPool.load(activity, R.raw.a1, 1);
+		B1 = soundPool.load(activity, R.raw.b1, 1);
+		Log.e("TONENUMEBR", B1 + "");
 		
 
 		
@@ -157,7 +157,7 @@ public class MelodyGenerator extends Activity {
 			int counter = 0;
 
 		     public void onTick(long millisUntilFinished) {
-					DetNextTone(counter);
+					DetNextTone(generatedMelody.get(counter));
 					counter++;
 		     }
 
