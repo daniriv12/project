@@ -14,14 +14,15 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int imageView1=0x7f070006;
+        public static final int imageView1=0x7f070007;
         public static final int mainLayout=0x7f070000;
-        public static final int playButton=0x7f070004;
-        public static final int resultsButton=0x7f070007;
-        public static final int singButton=0x7f070005;
-        public static final int stopButton=0x7f070003;
+        public static final int playButton=0x7f070005;
+        public static final int resultsButton=0x7f070008;
+        public static final int singButton=0x7f070006;
+        public static final int stopButton=0x7f070004;
         public static final int subLayout=0x7f070001;
-        public static final int textView1=0x7f070002;
+        public static final int subLayout2=0x7f070002;
+        public static final int textView1=0x7f070003;
     }
     public static final class layout {
         public static final int activity_grapher=0x7f030000;
@@ -39,9 +40,11 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f050000;
         public static final int intro=0x7f050001;
+        public static final int melody=0x7f050005;
         public static final int play=0x7f050002;
         public static final int results=0x7f050004;
         public static final int stop=0x7f050003;
+        public static final int voice=0x7f050006;
     }
     public static final class style {
         /** 

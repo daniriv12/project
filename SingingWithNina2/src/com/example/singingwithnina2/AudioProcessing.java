@@ -1,5 +1,6 @@
 package com.example.singingwithnina2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
@@ -28,6 +29,7 @@ public class AudioProcessing extends Activity{
     int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
     private RealDoubleFFT transformer;
     int blockSize = 256;
+    ArrayList<Integer> input;
     
     PlaySingActivity parent;
     Handler handler;
@@ -100,6 +102,7 @@ public class AudioProcessing extends Activity{
                     	transformer.ft(toTransform);
                     	Integer frequency = findBiggest(magnitude) * 8000/toTransform.length;
                         Log.e("HZ values new",  frequency + " ");
+                        
 
 
                         postToUI(frequency, toTransform);
@@ -128,7 +131,10 @@ public class AudioProcessing extends Activity{
     	for (int index = 0; index < toTransform.length ; index++){
     		if (toTransform[index] > biggest){
     			biggest = toTransform[index];
+    			
     			biggestIndex = index;
+    		
+    			
     		}
     		
     		
@@ -141,6 +147,7 @@ public class AudioProcessing extends Activity{
 		handler.post(new Runnable() {
 			public void run() {
 				parent.publishProgress(frequency, toTransform);
+				
 			}
 		});
     }

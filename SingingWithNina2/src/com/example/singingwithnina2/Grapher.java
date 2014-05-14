@@ -14,6 +14,8 @@ import com.jjoe64.graphview.*;
 public class Grapher extends Activity{
 	
 	
+	
+	
 	private ArrayList<Integer> melodyData;
 	private ArrayList<Integer> singData;
 	private int score;
@@ -39,7 +41,8 @@ public class Grapher extends Activity{
 		data = 	new GraphViewData[i];
 		for (int element = 0;element<melodyData.size(); element++){
 			int current = melodyData.get(element);
-			data[element] = new GraphViewData(element, current);
+			double currentD = (double) current;
+			data[element] = new GraphViewData(element, currentD);
 					
 					
 			}
@@ -50,7 +53,8 @@ public class Grapher extends Activity{
 		data = 	new GraphViewData[i];
 		for (int element = 0;element<singData.size(); element++){
 			int current = melodyData.get(element);
-			data[element] = new GraphViewData(element, current);
+			double currentD = (double) current;
+			data[element] = new GraphViewData(element, currentD);
 					
 					
 			}
@@ -58,7 +62,11 @@ public class Grapher extends Activity{
 		//im worried that it will create the graphs with a different number of elements, I think we can trunk it to say 200
 		//by using a for loop quite easily, need further testing
 		
-				
+		
+		
+		
+		
+		
 		GraphViewSeries singSeries = new GraphViewSeries("Voice", null, data);
 		
 		GraphView graphView = new BarGraphView(this, "Results");

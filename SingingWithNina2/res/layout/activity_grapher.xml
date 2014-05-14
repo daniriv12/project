@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="#FF000000"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" 
     android:id="@+id/mainLayout">
     <TextView
+        android:textColor="#FFFFFFFF"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Does this work?" />
+        android:text="@string/melody" />
     <LinearLayout
         android:id="@+id/subLayout"
         android:layout_width="wrap_content"
-        android:layout_height="250dip"
-		android:orientation="vertical" />       
+        android:layout_height="200dip"
+		android:orientation="vertical" />   
+	 <TextView
+	    android:textColor="#FFFFFFFF"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/voice" />
+    <LinearLayout
+        android:id="@+id/subLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="200dip"
+		android:orientation="vertical" />  
+		    
 	</LinearLayout>

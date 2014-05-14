@@ -4,6 +4,7 @@ package com.example.singingwithnina2;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,6 +28,7 @@ public class PlaySingActivity extends Activity{
 	private AudioProcessing audioProcessor;
 	private ArrayList<Integer> realFreq;
 	Bundle savedInstanceState;
+	
 	
 	
 	
@@ -84,10 +86,18 @@ public class PlaySingActivity extends Activity{
 			
 		case R.id.resultsButton:
 			
-			GrapherTwo graph = new GrapherTwo();
-			graph.Graph(generateListReadyForGraphing(genFreq), generateListReadyForGraphing(genFreq));
 			
-			graph.onCreate(savedInstanceState);
+			
+			
+			
+			Intent intent = new Intent(this, GrapherTwo.class);
+			Bundle data = new Bundle();
+			data.putIntegerArrayList("melody", generateListReadyForGraphing(genFreq));
+			data.putIntegerArrayList("sing", generateListReadyForGraphing(genFreq));
+			intent.putExtras(data);
+			startActivity(intent);
+			
+			
 			break;
 		}
 	}
@@ -95,6 +105,7 @@ public class PlaySingActivity extends Activity{
 
     protected void publishProgress(final Integer frequency, final double[]... toTransform) {
     	realFreq.add(frequency);
+
         canvas.drawColor(Color.BLACK);
 
         for (int i = 0; i < toTransform[0].length; i++) {
@@ -106,7 +117,9 @@ public class PlaySingActivity extends Activity{
         }
 
         iv.invalidate();
+      
     }
+  
     private ArrayList<Integer> generateListReadyForGraphing(ArrayList<Integer> frequency){ 
 		ArrayList<Integer> output = new ArrayList<Integer>();
 		for(int i = 0; i < frequency.size(); i++ ){
