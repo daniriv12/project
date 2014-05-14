@@ -26,6 +26,7 @@ public class PlaySingActivity extends Activity{
 	private Boolean alreadyPlayed;
 	private AudioProcessing audioProcessor;
 	private ArrayList<Integer> realFreq;
+	Bundle savedInstanceState;
 	
 	
 	
@@ -36,6 +37,7 @@ public class PlaySingActivity extends Activity{
     
 	
 	protected void onCreate(Bundle savedInstanceState) {
+		this.savedInstanceState = savedInstanceState;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_playsing);
 		melodyGenerator = new MelodyGenerator(this);
@@ -48,6 +50,7 @@ public class PlaySingActivity extends Activity{
 		Button stop = (Button) this.findViewById(R.id.stopButton);
 		Button play = (Button) this.findViewById(R.id.playButton);
 		Button sing = (Button) this.findViewById(R.id.singButton);
+		Button results = (Button) this.findViewById(R.id.resultsButton);
 		
 		iv = (ImageView) this.findViewById(R.id.imageView1);
         bitmap = Bitmap.createBitmap((int) 256, (int) 100,
@@ -60,6 +63,8 @@ public class PlaySingActivity extends Activity{
 	}
 	public void buttonClicked(View v){
 		switch(v.getId()) {
+		default:
+			break;
 		case R.id.playButton:
 			if(alreadyPlayed){
 				melodyGenerator.detPlay();
@@ -75,6 +80,14 @@ public class PlaySingActivity extends Activity{
 			break;
 		case R.id.stopButton:
 			melodyGenerator.stop();
+			break;
+			
+		case R.id.resultsButton:
+			
+			GrapherTwo graph = new GrapherTwo();
+			graph.Graph(generateListReadyForGraphing(genFreq), generateListReadyForGraphing(genFreq));
+			
+			graph.onCreate(savedInstanceState);
 			break;
 		}
 	}
@@ -97,7 +110,7 @@ public class PlaySingActivity extends Activity{
     private ArrayList<Integer> generateListReadyForGraphing(ArrayList<Integer> frequency){ 
 		ArrayList<Integer> output = new ArrayList<Integer>();
 		for(int i = 0; i < frequency.size(); i++ ){
-			if(i == frequency.size() - 1){ // because the last tone is double time
+			if(i == frequency.size() - 1){ // because the last tone is double time heh
 				for(int index = 0; index < 88; index++){
 					output.add(frequency.get(i));
 				}

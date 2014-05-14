@@ -4,5 +4,6 @@
     <string name="intro">Press play when youre ready to hear your melody and sing when youre ready to sing!</string>
     <string name="play">Play melody!</string>
     <string name="stop">Stop!</string>
+    <string name="results">Results</string>
 
 </resources>
