@@ -3,7 +3,9 @@ package com.example.singingwithnina2;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.jjoe64.graphview.GraphView.GraphViewData;
@@ -20,12 +22,14 @@ public class Grapher extends Activity{
 	private ArrayList<Integer> singData;
 	private int score;
 	
+	
 	int i = 200; //placeholder
 	private GraphViewData[] data = new GraphViewData[i];
 	
 	public Grapher(ArrayList<Integer> melodyData,ArrayList<Integer> singData){
 		this.melodyData = melodyData;
 		this.singData = singData;
+		
 		score = 0;
 		for (int x = 0 ; x < melodyData.size() && x < singData.size(); x++){
 			score = score + Math.abs(melodyData.get(x) - singData.get(x)); //the greater the score, the worse you did, we can then use this somehow
@@ -81,6 +85,7 @@ public class Grapher extends Activity{
 		
 	
 	}
+	
 	
 	public int getScore(){
 		return score;

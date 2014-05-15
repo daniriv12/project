@@ -10,6 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -80,26 +81,36 @@ public class PlaySingActivity extends Activity{
 		case R.id.singButton:
 			audioProcessor.sing();
 			break;
+			
 		case R.id.stopButton:
 			melodyGenerator.stop();
 			break;
 			
-		case R.id.resultsButton:
-			
-			
-			
-			
-			
-			Intent intent = new Intent(this, GrapherTwo.class);
-			Bundle data = new Bundle();
-			data.putIntegerArrayList("melody", generateListReadyForGraphing(genFreq));
-			data.putIntegerArrayList("sing", generateListReadyForGraphing(genFreq));
-			intent.putExtras(data);
-			startActivity(intent);
-			
-			
-			break;
-		}
+	}
+	}
+	
+	public void imReady(){
+		Intent intent = new Intent(this, GrapherTwo.class);
+		Bundle data = new Bundle();
+		data.putIntegerArrayList("melody", generateListReadyForGraphing(genFreq));
+		data.putIntegerArrayList("sing", generateListReadyForGraphing(genFreq));
+		intent.putExtras(data);
+		startActivity(intent);
+	
+	}
+	
+	public void pause(){
+		new CountDownTimer (5000, 1000){
+		        	
+		        	public void onTick(long millisUntilFinished){
+		      
+		        	}
+		        	
+		        	public void onFinish(){
+		        		return;
+		        	}
+		        
+		        }.start();
 	}
 	
 
@@ -136,6 +147,11 @@ public class PlaySingActivity extends Activity{
 		}
 		return output;
 	}
+    private void startOver(){
+    	alreadyPlayed = false; //more stuff to come!
+    	
+    
+    }
 
     
 	

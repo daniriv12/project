@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,7 +23,7 @@ import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 
 public class GrapherTwo extends Activity{
 	
-	
+	private Button back;
 	
 	
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class GrapherTwo extends Activity{
 		Bundle extras = intent.getExtras();
 		singData = extras.getIntegerArrayList("sing");
 		melodyData = extras.getIntegerArrayList("melody");
+		back = (Button) findViewById(R.id.backButton);
 		
 		
 		
@@ -148,6 +151,12 @@ public class GrapherTwo extends Activity{
 		
 		
 	
+	}
+	
+	public void onClick(View v){
+		
+		Intent intent = new Intent(this, PlaySingActivity.class);
+		startActivity(intent);
 	}
 	
 	//public int getScore(){

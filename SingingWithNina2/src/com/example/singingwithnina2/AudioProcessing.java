@@ -166,9 +166,12 @@ public class AudioProcessing extends Activity{
         	public void onFinish(){
         		started = false;
         		recordTask.cancel(true);
+        		parent.imReady(); // starts graph activity!
         	}
         
         }.start();
+        
+
         
         
         
