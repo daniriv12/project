@@ -50,10 +50,7 @@ public class GrapherTwo extends Activity{
 	
 	
 		
-		score = 0;
-		for (int x = 0 ; x < melodyData.size() && x < singData.size(); x++){
-			score = score + Math.abs(melodyData.get(x) - singData.get(x)); //the greater the score, the worse you did, we can then use this somehow
-		}
+		
 		setContentView(R.layout.activity_grapher);
 
 		
@@ -126,6 +123,14 @@ public class GrapherTwo extends Activity{
 		layout.addView(graphView);
 	//	LinearLayout layout2 = (LinearLayout) findViewById(R.id.subLayout);
 		layout.addView(graphView2);
+		
+		
+		score = 0;
+		for (int x = 0 ; x < melodyData.size() && x < pseudoSing.size(); x++){
+			score = score + Math.abs(melodyData.get(x) - pseudoSing.get(x)); //the greater the score, the worse you did, we can then use this somehow
+		}
+		
+		
 		
 		TextView scoreSend = (TextView) findViewById(R.id.textScore);
 		Integer score1 = (Integer)score;
