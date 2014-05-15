@@ -1,29 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#FF000000"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:id="@+id/mainLayout">
+    android:layout_height="fill_parent"
+    android:background="#FF000000"
+    android:orientation="vertical" >
+
     <TextView
-        android:textColor="#FFFFFFFF"
-        android:layout_width="fill_parent"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:text="@string/melody" />
+        android:text="@string/melody"
+        android:textColor="#FF9900" />
+
+    <TextView
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:text="@string/voice"
+        android:textColor="#FFFFFFFF" />
+
     <LinearLayout
         android:id="@+id/subLayout"
         android:layout_width="wrap_content"
         android:layout_height="200dip"
-		android:orientation="vertical" />   
-	 <TextView
-	    android:textColor="#FFFFFFFF"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/voice" />
+        android:orientation="vertical" />
+    <!--
     <LinearLayout
         android:id="@+id/subLayout2"
         android:layout_width="wrap_content"
         android:layout_height="200dip"
-		android:orientation="vertical" />  
-		    
-	</LinearLayout>
+        android:orientation="vertical" />
+    -->
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:text="@string/score"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:id="@+id/textScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empty"
+        android:textColor="#FFFFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back" />
+
+</LinearLayout>

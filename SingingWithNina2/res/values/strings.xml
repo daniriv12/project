@@ -5,8 +5,11 @@
     <string name="play">Play melody!</string>
     <string name="stop">Stop!</string>
     <string name="results">Results</string>
-    <string name="melody">Melody was:</string>
-    <string name="voice">Your voice did:</string>
+    <string name="melody">Melody</string>
+    <string name="voice">Your voice</string>
+    <string name="score">Your score: </string>
+     <string name="back">Back</string>
+     <string name="empty"></string>
     
 
 </resources>
