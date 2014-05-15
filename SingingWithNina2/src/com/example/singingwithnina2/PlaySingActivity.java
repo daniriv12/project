@@ -93,28 +93,15 @@ public class PlaySingActivity extends Activity{
 		Intent intent = new Intent(this, GrapherTwo.class);
 		Bundle data = new Bundle();
 		data.putIntegerArrayList("melody", generateListReadyForGraphing(genFreq));
-		data.putIntegerArrayList("sing", generateListReadyForGraphing(genFreq));
+		data.putIntegerArrayList("sing", realFreq);
 		intent.putExtras(data);
 		startActivity(intent);
 	
 	}
 	
-	public void pause(){
-		new CountDownTimer (5000, 1000){
-		        	
-		        	public void onTick(long millisUntilFinished){
-		      
-		        	}
-		        	
-		        	public void onFinish(){
-		        		return;
-		        	}
-		        
-		        }.start();
-	}
-	
 
     protected void publishProgress(final Integer frequency, final double[]... toTransform) {
+    	realFreq.add(frequency);
     	realFreq.add(frequency);
 
         canvas.drawColor(Color.BLACK);

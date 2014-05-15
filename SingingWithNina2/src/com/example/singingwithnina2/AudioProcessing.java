@@ -136,8 +136,7 @@ public class AudioProcessing extends Activity{
     		
     			
     		}
-    		
-    		
+
     	}
     	
     	return biggestIndex;

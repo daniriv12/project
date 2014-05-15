@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -57,46 +58,30 @@ public class GrapherTwo extends Activity{
 		setContentView(R.layout.activity_grapher);
 
 		
-		i = melodyData.size();
+		i = singData.size();
 		data = 	new GraphViewData[i];
-		for (int element = 0;element<pseudoSing.size(); element++){ //Replaced melody values for newmelody just for testing, reverse
-			int current = pseudoSing.get(element);
+		for (int element = 0;element<singData.size(); element++){ //Replaced melody values for newmelody just for testing, reverse
+			int current = singData.get(element);
 			data[element] = new GraphViewData(element, current);
 					
 					
 			}
 		data[0] = new GraphViewData(0,0);
 		
-		//THIS IS ALL IRRELEVANT IF NOT USING BAR GRAPHS.
 		
-	//	GraphViewSeriesStyle colour = new GraphViewSeriesStyle();
-	//	colour.setValueDependentColor(new ValueDependentColor(){
-	//		public int get(GraphViewDataInterface data) {
-	//		    // the higher the more red
-	//		    return Color.RED;
-	//		  }
-	//	});
-	//	GraphViewSeriesStyle colour2 = new GraphViewSeriesStyle();
-	//	colour2.setValueDependentColor(new ValueDependentColor(){
-	//		public int get(GraphViewDataInterface data) {
-	//			    // the higher the more red
-	//			return Color.BLUE;
-	//			  }
-			
-		
-	//	});
 		GraphViewSeries singSeries = new GraphViewSeries("PseudoSing", new GraphViewSeriesStyle(Color.WHITE, 1), data);
 		
 		
 		
-		i = singData.size();
+		i = melodyData.size();
 		data = 	new GraphViewData[i];
-		for (int element = 0;element<singData.size(); element++){
+		for (int element = 0;element<melodyData.size(); element++){
 			int current = melodyData.get(element);
 			data[element] = new GraphViewData(element, (current));
 					
 					
 			}
+	
 		data[0] = new GraphViewData(0,0);
 		
 		//im worried that it will create the graphs with a different number of elements, I think we can trunk it to say 200
