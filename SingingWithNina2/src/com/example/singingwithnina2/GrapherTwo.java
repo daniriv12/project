@@ -1,6 +1,7 @@
 package com.example.singingwithnina2;
 
 import android.app.Activity;
+import android.graphics.PorterDuff;
 
 
 import java.util.ArrayList;
@@ -8,11 +9,13 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView.GraphViewData;
@@ -47,20 +50,25 @@ public class GrapherTwo extends Activity{
 		
 		
 		
-		ArrayList<Integer>pseudoSing= new ArrayList<Integer>();
-		for (int z = 0 ; z < singData.size(); z++){    //USED ONLY FOR TESTING PURPOSES (SIMULATES RANDOM DATA)
-			pseudoSing.add((250 + (int)(Math.random() * ((450 - 250) + 1))));
+		int smallest = 0;
+		if (singData.size() > melodyData.size()){smallest = melodyData.size();}
+		else{smallest = singData.size();}
+		
+		for (int w = 0; w<smallest;w++){
+			if (singData.get(w) > 1000){singData.set(w, (Integer) 1000);}
+			if (melodyData.get(w) > 1000){melodyData.set(w, (Integer) 1000);}
+			
+		//This loop is an attempt to remove horrible spikes. Basically makes the biggest possible value 1000, or whatever we set there.
 		}
-	
-	
 		
 		
 		setContentView(R.layout.activity_grapher);
 
 		
-		i = singData.size();
+		//i = singData.size() ;
+		i = smallest;
 		data = 	new GraphViewData[i];
-		for (int element = 0;element<singData.size(); element++){ //Replaced melody values for newmelody just for testing, reverse
+		for (int element = 0;element<singData.size() && element<melodyData.size(); element++){ //Replaced melody values for newmelody just for testing, reverse
 			int current = singData.get(element);
 			data[element] = new GraphViewData(element, current);
 					
@@ -73,9 +81,10 @@ public class GrapherTwo extends Activity{
 		
 		
 		
-		i = melodyData.size();
+	//	i = melodyData.size();
+		i = smallest;
 		data = 	new GraphViewData[i];
-		for (int element = 0;element<melodyData.size(); element++){
+		for (int element = 0;element<melodyData.size() && element<singData.size(); element++){
 			int current = melodyData.get(element);
 			data[element] = new GraphViewData(element, (current));
 					
@@ -83,17 +92,13 @@ public class GrapherTwo extends Activity{
 			}
 	
 		data[0] = new GraphViewData(0,0);
-		
-		//im worried that it will create the graphs with a different number of elements, I think we can trunk it to say 200
-		//by using a for loop quite easily, need further testing
-		
-				
+
 		GraphViewSeries melodySeries = new GraphViewSeries("Melody", new GraphViewSeriesStyle(Color.rgb(255, 153, 0) , 3), data);
 		LineGraphView graphView = new LineGraphView(this, "Results");	
 		graphView.setDrawBackground(false);
 		graphView.addSeries(singSeries);
 		graphView.setDrawBackground(false);
-		//graphView.setBackgroundColor(Color.RED);
+
 		
 		graphView.getGraphViewStyle().setGridColor(Color.BLACK);
 		graphView.getGraphViewStyle().setNumHorizontalLabels(0);
@@ -109,14 +114,38 @@ public class GrapherTwo extends Activity{
 		//
 		LinearLayout layout = (LinearLayout) findViewById(R.id.subLayout);
 		layout.addView(graphView);
-	//	LinearLayout layout2 = (LinearLayout) findViewById(R.id.subLayout);
 		layout.addView(graphView2);
 		
 		
 		score = 0;
-		for (int x = 0 ; x < melodyData.size() && x < pseudoSing.size(); x++){
-			score = score + Math.abs(melodyData.get(x) - pseudoSing.get(x)); //the greater the score, the worse you did, we can then use this somehow
+		for (int x = 0 ; x < melodyData.size() && x < singData.size(); x++){
+			score = score + Math.abs(melodyData.get(x) - singData.get(x)); //the greater the score, the worse you did, we can then use this somehow
 		}
+		
+		double numberOfStars= 0.0;
+		if (score > 100000){numberOfStars=0.5;}
+		else if (score > 80000){numberOfStars=1;}
+		else if (score > 70000){numberOfStars=1.5;}
+		else if (score > 60000){numberOfStars=2;}
+		else if (score > 50000){numberOfStars=2.5;}
+		else if (score > 40000){numberOfStars=3;}
+		else if (score > 30000){numberOfStars=3.5;}
+		else if (score > 20000){numberOfStars=4;}
+		else if (score > 10000){numberOfStars=4.5;}
+		else{numberOfStars=5;}
+		float numberOfStars1 = (float) numberOfStars;
+		RatingBar scoreBar = (RatingBar) findViewById(R.id.scoreBar);
+		
+		scoreBar.setRating(numberOfStars1);
+		LayerDrawable stars = (LayerDrawable) scoreBar.getProgressDrawable();
+		stars.getDrawable(2).setColorFilter(Color.rgb(255, 153, 00), PorterDuff.Mode.SRC_ATOP);
+		
+		
+		int max = 100000; //replace this by a really bad value, this will give one star and a score of too bad
+		if (score>max){score = max;}
+		
+		score = (max - score) / 1000;
+		
 		
 		
 		
@@ -126,12 +155,6 @@ public class GrapherTwo extends Activity{
 		CharSequence score3 = (CharSequence) score2;
 		scoreSend.append(score3);
 		
-		
-		
-		//LinearLayout layout = (LinearLayout) findViewById(R.id.subLayout);
-		//layout.addView(graphView);
-		//LinearLayout layout2 = (LinearLayout) findViewById(R.id.subLayout2);
-		//layout2.addView(graphView2);
 		
 		
 		
@@ -144,8 +167,6 @@ public class GrapherTwo extends Activity{
 		startActivity(intent);
 	}
 	
-	//public int getScore(){
-		//return score;
-	//}
+
 	
 }

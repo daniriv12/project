@@ -28,7 +28,7 @@ public class AudioProcessing extends Activity{
     int channelConfiguration = AudioFormat.CHANNEL_CONFIGURATION_MONO;
     int audioEncoding = AudioFormat.ENCODING_PCM_16BIT;
     private RealDoubleFFT transformer;
-    int blockSize = 256;
+    int blockSize = 164;
     ArrayList<Integer> input;
     
     PlaySingActivity parent;

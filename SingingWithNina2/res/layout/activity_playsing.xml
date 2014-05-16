@@ -37,17 +37,8 @@
         android:onClick = "buttonClicked"
         android:text="@string/play" />
 
-    <Button
-        android:id="@+id/singButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/playButton"
-        android:layout_below="@+id/playButton"
-        android:layout_marginTop="30dp"
-        android:onClick = "buttonClicked"
-        android:text="Sing!" />
-
     <ImageView
+        android:contentDescription="@string/empty"
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +55,16 @@
         android:onClick = "buttonClicked"
         android:text="@string/results" />
 
-    
+    <Button
+        android:id="@+id/singButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playButton"
+        android:layout_below="@+id/playButton"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="36dp"
+        android:onClick="buttonClicked"
+        android:text="@string/sing" />
     
 </RelativeLayout>
 

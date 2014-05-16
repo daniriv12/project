@@ -25,7 +25,7 @@ public class PlaySingActivity extends Activity{
 	
 	private MelodyGenerator melodyGenerator;
 	private ArrayList<Integer> genFreq;
-	private Boolean alreadyPlayed;
+
 	private AudioProcessing audioProcessor;
 	private ArrayList<Integer> realFreq;
 	Bundle savedInstanceState;
@@ -44,16 +44,22 @@ public class PlaySingActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_playsing);
 		melodyGenerator = new MelodyGenerator(this);
+		
 		audioProcessor = new AudioProcessing(this, new Handler());
-		alreadyPlayed = false;
+	
 		realFreq = new ArrayList<Integer>();
-		genFreq = new ArrayList<Integer>();
+		genFreq = melodyGenerator.Generate();
 
 	
 		Button stop = (Button) this.findViewById(R.id.stopButton);
 		Button play = (Button) this.findViewById(R.id.playButton);
 		Button sing = (Button) this.findViewById(R.id.singButton);
 		Button results = (Button) this.findViewById(R.id.resultsButton);
+		
+		stop.setSoundEffectsEnabled(false);
+		play.setSoundEffectsEnabled(false);
+		sing.setSoundEffectsEnabled(false);
+		results.setSoundEffectsEnabled(false);
 		
 		iv = (ImageView) this.findViewById(R.id.imageView1);
         bitmap = Bitmap.createBitmap((int) 256, (int) 100,
@@ -69,13 +75,7 @@ public class PlaySingActivity extends Activity{
 		default:
 			break;
 		case R.id.playButton:
-			if(alreadyPlayed){
-				melodyGenerator.detPlay();
-			}
-			else{
-				alreadyPlayed = true;
-				genFreq = melodyGenerator.randomPlay();
-			}
+			melodyGenerator.Play();
 			break;
 			
 		case R.id.singButton:
@@ -83,8 +83,9 @@ public class PlaySingActivity extends Activity{
 			break;
 			
 		case R.id.stopButton:
-			melodyGenerator.stop();
+			melodyGenerator.Generate();
 			break;
+		
 			
 	}
 	}
@@ -101,7 +102,7 @@ public class PlaySingActivity extends Activity{
 	
 
     protected void publishProgress(final Integer frequency, final double[]... toTransform) {
-    	realFreq.add(frequency);
+    	// realFreq.add(frequency);
     	realFreq.add(frequency);
 
         canvas.drawColor(Color.BLACK);
@@ -134,11 +135,7 @@ public class PlaySingActivity extends Activity{
 		}
 		return output;
 	}
-    private void startOver(){
-    	alreadyPlayed = false; //more stuff to come!
-    	
-    
-    }
+
 
     
 	
