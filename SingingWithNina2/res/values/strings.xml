@@ -2,6 +2,7 @@
 
     <string name="app_name">Singing with Nina</string>
     <string name="intro">Press play when youre ready to hear your melody and sing when youre ready to sing!</string>
+    
     <string name="play">Play melody!</string>
     <string name="stop">Change Melody</string>
     <string name="results">High Scores</string>
@@ -28,6 +29,11 @@
      <string name="empty"></string>
      <string name="save">Save Score!</string>
     
+     <string name="information">Created by Nina Stavnsbjerg, Sebastián Poliak, and Daniel Rivera. \n \n 
+         Singing with Nina is our final project for Software Atelier II. \n \n         
+         Special Thanks to Davide Eynard and Amanj Sherwany for the help!</string>
+     <string name="about">About this app</string>  
+     <string name="thanks">Thank you and we hope you enjoy it!</string>  
      
 
 </resources>

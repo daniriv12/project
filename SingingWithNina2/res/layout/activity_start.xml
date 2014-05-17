@@ -6,26 +6,13 @@
     >
 
     <ImageView
-        android:contentDescription="@string/start"
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:src="@drawable/cooltext1567501286" />
-
-    <ImageView
         android:contentDescription="@string/start"
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        
-        android:layout_centerVertical="true"
-        
-       
-        android:src="@drawable/batman" />
+        android:src="@drawable/cooltext1567501286" />
 
     <Button
         android:id="@+id/scoresButton"
@@ -33,10 +20,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        
+        android:layout_marginBottom="47dp"
         android:onClick="onClick"
         android:text="@string/scores"
         android:textColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_above="@+id/startButton"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/start"
+        android:src="@drawable/batman" />
 
     <Button
         android:id="@+id/startButton"
@@ -45,10 +43,18 @@
         android:layout_above="@+id/scoresButton"
         android:layout_alignParentLeft="true"
         android:onClick="onClick"
-        android:text="@string/start" 
-       
+        android:text="@string/start"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/infoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick"
+        android:textColor="#FFFFFF"
+        android:text="@string/about" />
 
 </RelativeLayout>

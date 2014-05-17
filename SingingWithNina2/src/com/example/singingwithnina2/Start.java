@@ -10,6 +10,7 @@ public class Start extends Activity{
 	
 	private Button start;
 	private Button scores;
+	private Button info;
 
 	
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class Start extends Activity{
 		
 		start = (Button) findViewById(R.id.startButton);
 		scores= (Button) findViewById(R.id.scoresButton);
+		info = (Button) findViewById(R.id.infoButton);
 }
 	
 public void onClick(View v){
@@ -34,6 +36,12 @@ public void onClick(View v){
 			Intent intent2 = new Intent(this, HighScores.class);
 			startActivity(intent2);
 			break;
+			
+		case R.id.infoButton:
+			Intent intent3 = new Intent(this, Information.class);
+			startActivity(intent3);
+			break;
+		
 		
 	}
 }
