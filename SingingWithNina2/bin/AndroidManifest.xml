@@ -17,6 +17,15 @@
         <activity
             android:name="com.example.singingwithnina2.PlaySingActivity"
             android:label="@string/app_name" >
+            
+
+        </activity>
+        <activity
+            android:name="com.example.singingwithnina2.GrapherTwo">
+            
+        </activity>
+        <activity
+            android:name="com.example.singingwithnina2.Start">
             <intent-filter>
                 
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +33,10 @@
 
                 
             </intent-filter>
-
-        </activity>
-        <activity
-            android:name="com.example.singingwithnina2.GrapherTwo">
             
         </activity>
+        
+        
     </application>
     
 

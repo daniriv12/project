@@ -23,7 +23,7 @@ import com.jjoe64.graphview.*;
 import com.jjoe64.graphview.GraphView.LegendAlign;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 
-//THIS CLASS IS JUST AN ATTEMPT TO FIX CLASS GRAPHER, PAY IT NO MIND
+
 
 public class GrapherTwo extends Activity{
 	

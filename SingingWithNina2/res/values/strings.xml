@@ -10,6 +10,8 @@
     <string name="score">Your score: </string>
     <string name="sing">Sing! </string>
     <string name="newMelody">New Melody</string>
+    <string name="start">START!</string>
+    <string name="scores">High Scores</string>
     
     
      <string name="back">Try Again</string>
