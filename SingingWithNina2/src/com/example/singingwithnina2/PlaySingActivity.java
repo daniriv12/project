@@ -85,6 +85,12 @@ public class PlaySingActivity extends Activity{
 		case R.id.stopButton:
 			melodyGenerator.Generate();
 			break;
+			
+		case R.id.resultsButton:
+			Intent intent2 = new Intent(this, HighScores.class);
+			startActivity(intent2);
+			break;
+			
 		
 			
 	}

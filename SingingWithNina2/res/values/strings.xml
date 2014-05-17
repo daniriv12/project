@@ -3,15 +3,25 @@
     <string name="app_name">Singing with Nina</string>
     <string name="intro">Press play when youre ready to hear your melody and sing when youre ready to sing!</string>
     <string name="play">Play melody!</string>
-    <string name="stop">New Melody</string>
-    <string name="results">Results</string>
-    <string name="melody">Melody</string>
+    <string name="stop">Change Melody</string>
+    <string name="results">High Scores</string>
+    <string name="melody">Play Melody</string>
     <string name="voice">Your voice</string>
-    <string name="score">Your score: </string>
+    <string name="score">	Your score: </string>
+    <string name="saveScore">Enter your name to save your score</string>
     <string name="sing">Sing! </string>
-    <string name="newMelody">New Melody</string>
+    <string name="newMelody">Change Melody</string>
     <string name="start">START!</string>
     <string name="scores">High Scores</string>
+    <string name="goBackToStart">Start Screen</string>
+    
+    <string name="leaderboard">Leaderboard</string>
+    
+    <string name="first">1. </string>
+    <string name="second">2. </string>
+    <string name="third">3. </string>
+    <string name="fourth">4. </string>
+    <string name="fifth">5. </string>
     
     
      <string name="back">Try Again</string>

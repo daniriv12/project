@@ -38,6 +38,11 @@
             </intent-filter>
             
         </activity>
+        <activity
+            android:name="com.example.singingwithnina2.HighScores"
+            android:label="Bestest Singers">
+           
+        </activity>
         
         
     </application>

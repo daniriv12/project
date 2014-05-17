@@ -18,17 +18,10 @@ public class Start extends Activity{
 		
 		start = (Button) findViewById(R.id.startButton);
 		scores= (Button) findViewById(R.id.scoresButton);
-		
-		
-	
-
 }
 	
-	
 public void onClick(View v){
-		
-		
-		
+				
 		switch(v.getId()) {
 		default:
 			break;
@@ -38,7 +31,8 @@ public void onClick(View v){
 			break;
 			
 		case R.id.scoresButton:
-			//implement score send here
+			Intent intent2 = new Intent(this, HighScores.class);
+			startActivity(intent2);
 			break;
 		
 	}
