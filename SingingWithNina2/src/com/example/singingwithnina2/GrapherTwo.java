@@ -151,7 +151,7 @@ public class GrapherTwo extends Activity{
 		
 		TextView scoreSend = (TextView) findViewById(R.id.textScore);
 		Integer score1 = (Integer)score;
-		String score2 = score1.toString();
+		String score2 = (score1.toString() + "/100");
 		CharSequence score3 = (CharSequence) score2;
 		scoreSend.append(score3);
 		
