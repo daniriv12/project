@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.singingwithnina2.MelodyGenerator;
 import com.example.singingwithnina2.AudioProcessing;
@@ -63,13 +64,14 @@ public class PlaySingActivity extends Activity{
 		results.setSoundEffectsEnabled(false);
 		
 		iv = (ImageView) this.findViewById(R.id.imageView1);
-        bitmap = Bitmap.createBitmap((int) 256, (int) 100,
+        bitmap = Bitmap.createBitmap((int) 512, (int) 200,
                 Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
         paint = new Paint();
         paint.setColor(0xff33B5E5);
         paint.setStrokeWidth(2.0f);
         iv.setImageBitmap(bitmap);
+
 	
 	}
 	public void buttonClicked(View v){
@@ -125,8 +127,8 @@ public class PlaySingActivity extends Activity{
         for (int i = 0; i < toTransform[0].length; i++) {
             //int downy = (int) (100 - (toTransform[0][i] * 10));
             //int upy = 100;
-        	int downy = (int) (50 - (toTransform[0][i] * 10)); 
-        	int upy = (int) (50 + (toTransform[0][i] * 10));
+        	int downy = (int) (100 - (toTransform[0][i] * 10)); 
+        	int upy = (int) (100 + (toTransform[0][i] * 10));
 
             canvas.drawLine(x, downy, x, upy, paint);
             x += 3;
