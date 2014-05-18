@@ -15,26 +15,34 @@
         android:src="@drawable/cooltext1567501286" />
 
     <Button
-        android:id="@+id/scoresButton"
+        android:id="@+id/quitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onQuit"
+        android:textColor="#FF9900"
+        android:text="@string/quit" />
+
+    <Button
+        android:id="@+id/infoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/quitButton"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="47dp"
+        android:onClick="onClick"
+        android:text="@string/about"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/scoresButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/infoButton"
+        android:layout_alignParentLeft="true"
         android:onClick="onClick"
         android:text="@string/scores"
         android:textColor="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
-        android:layout_above="@+id/startButton"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:contentDescription="@string/start"
-        android:src="@drawable/batman" />
 
     <Button
         android:id="@+id/startButton"
@@ -47,14 +55,15 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/infoButton"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/startButton"
+        android:layout_below="@+id/imageView1"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick"
-        android:textColor="#FFFFFF"
-        android:text="@string/about" />
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/start"
+        android:src="@drawable/batman" />
 
 </RelativeLayout>

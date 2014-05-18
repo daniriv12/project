@@ -23,6 +23,7 @@
     <string name="third">3. </string>
     <string name="fourth">4. </string>
     <string name="fifth">5. </string>
+    <string name ="quit"> Quit</string>
     
     <string name="clear">Clear Highscores</string>
      <string name="back">Try Again</string>
