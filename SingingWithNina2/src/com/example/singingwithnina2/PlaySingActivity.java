@@ -67,7 +67,7 @@ public class PlaySingActivity extends Activity{
                 Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
         paint = new Paint();
-        paint.setColor(Color.RED);
+        paint.setColor(0xff33B5E5);
         paint.setStrokeWidth(2.0f);
         iv.setImageBitmap(bitmap);
 	
@@ -123,8 +123,10 @@ public class PlaySingActivity extends Activity{
         canvas.drawColor(Color.BLACK);
         int x = 0;
         for (int i = 0; i < toTransform[0].length; i++) {
-            int downy = (int) (100 - (toTransform[0][i] * 10));
-            int upy = 100;
+            //int downy = (int) (100 - (toTransform[0][i] * 10));
+            //int upy = 100;
+        	int downy = (int) (50 - (toTransform[0][i] * 10)); 
+        	int upy = (int) (50 + (toTransform[0][i] * 10));
 
             canvas.drawLine(x, downy, x, upy, paint);
             x += 3;
