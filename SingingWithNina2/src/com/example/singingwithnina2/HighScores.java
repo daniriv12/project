@@ -225,6 +225,9 @@ public void onClear(View v) {
                         	toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                         	toast.show();
                         	
+                        	finish();  //This two lines refreshes the activity within itself :)
+                        	startActivity(getIntent());
+                        	
                         	
 
                         }

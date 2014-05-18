@@ -76,6 +76,7 @@ public void onQuit(View v) {
 	
 	
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
+   
     builder.setMessage("Exit Singing with Nina?")
             .setCancelable(false)
             .setPositiveButton("Yes",
@@ -87,6 +88,7 @@ public void onQuit(View v) {
                         	Toast toast = Toast.makeText(getApplicationContext(), "See you soon!",
                         			   Toast.LENGTH_SHORT);
                         	toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                        	
                         	toast.show();
                         	finish();
                         	
