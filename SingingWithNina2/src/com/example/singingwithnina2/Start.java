@@ -40,7 +40,7 @@ public class Start extends Activity{
 }
 	
 public void onClick(View v){
-	
+		finish();
 		MediaPlayer button = MediaPlayer.create(this, R.raw.button2); //LINE ONE TO ADDING A BUTTON SOUND!!
 				
 		switch(v.getId()) {
