@@ -226,8 +226,10 @@ public void onClear(View v) {
                         	toast.show();
                         	
                         	
-                        	finish();  //This two lines refreshes the activity within itself :)
-                        	startActivity(getIntent());
+                        	finish();
+                        	
+                        	
+                        	
                         	
                         	
 
