@@ -46,7 +46,7 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/highScores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -57,27 +57,91 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FF9900" />
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp"
-        android:onClick="onClick"
-        android:text="@string/goBackToStart"
-        android:textColor="#FFFFFF" />
-
     <TextView
         android:id="@+id/first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_below="@+id/textView6"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="48dp"
+        android:layout_alignLeft="@+id/highScores"
+        android:layout_below="@+id/highScores"
+        android:layout_marginTop="50dp"
         android:text="@string/first"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/firstScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/first"
+        android:layout_alignBottom="@+id/first"
+        android:layout_alignParentRight="true"
+        android:text="@string/empty"
+        android:textColor="#FF9900"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/secondScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/second"
+        android:layout_alignBottom="@+id/second"
+        android:layout_alignParentRight="true"
+        android:text="@string/empty"
+        android:textColor="#FF9900"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/thirdScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/third"
+        android:layout_alignBottom="@+id/third"
+        android:layout_alignParentRight="true"
+        android:text="@string/empty"
+        android:textColor="#FF9900"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/fourthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fourth"
+        android:layout_alignBottom="@+id/fourth"
+        android:layout_alignParentRight="true"
+        android:text="@string/empty"
+        android:textColor="#FF9900"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/fifthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fifth"
+        android:layout_alignBottom="@+id/fifth"
+        android:layout_alignParentRight="true"
+        android:text="@string/empty"
+        android:textColor="#FF9900"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fifthScore"
+        android:layout_marginTop="24dp"
+        android:onClick="onClick"
+        android:text="@string/goBackToStart"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/backButton"
+        android:onClick="onClear"
+        android:textColor="#FF9900"
+        android:text="@string/clear" />
 
 </RelativeLayout>

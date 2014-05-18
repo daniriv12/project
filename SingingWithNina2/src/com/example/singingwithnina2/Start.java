@@ -1,7 +1,9 @@
 package com.example.singingwithnina2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,14 @@ public class Start extends Activity{
 		start = (Button) findViewById(R.id.startButton);
 		scores= (Button) findViewById(R.id.scoresButton);
 		info = (Button) findViewById(R.id.infoButton);
+		
+		
+		SharedPreferences scoreData = this.getSharedPreferences(
+			      "com.example.singingwithnina2", Context.MODE_PRIVATE);
+		
+	
+		
+		
 }
 	
 public void onClick(View v){

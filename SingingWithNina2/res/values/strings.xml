@@ -24,7 +24,7 @@
     <string name="fourth">4. </string>
     <string name="fifth">5. </string>
     
-    
+    <string name="clear">Clear Highscores</string>
      <string name="back">Try Again</string>
      <string name="empty"></string>
      <string name="save">Save Score!</string>
