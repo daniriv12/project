@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.LayerDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -180,17 +181,22 @@ public class GrapherTwo extends Activity{
 		SharedPreferences scoreData = this.getSharedPreferences(
 			      "com.example.singingwithnina2", Context.MODE_PRIVATE);
 		
+		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
+		
+		
 		
 		
 		switch(v.getId()) {
 		default:
 			break;
 		case R.id.backButton:
+			button.start();
 			Intent intent = new Intent(this, PlaySingActivity.class);
 			startActivity(intent);
 			break;
 			
 		case R.id.saveButton:
+			button.start();
 			nameText   = (EditText)findViewById(R.id.nameText);
 			String name = nameText.getText().toString();
 			

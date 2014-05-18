@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -71,6 +72,11 @@ public class PlaySingActivity extends Activity{
 	
 	}
 	public void buttonClicked(View v){
+		
+		
+		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
+		
+		
 		switch(v.getId()) {
 		default:
 			break;
@@ -83,10 +89,12 @@ public class PlaySingActivity extends Activity{
 			break;
 			
 		case R.id.stopButton:
+			button.start();
 			melodyGenerator.Generate();
 			break;
 			
 		case R.id.resultsButton:
+			button.start();
 			Intent intent2 = new Intent(this, HighScores.class);
 			startActivity(intent2);
 			break;

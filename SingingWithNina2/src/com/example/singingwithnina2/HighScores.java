@@ -15,6 +15,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -193,13 +194,17 @@ public class HighScores extends Activity{
 		
 }
 public void onClick(View v){
-		
+		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
+		button.start();
 		Intent intent = new Intent(this, Start.class);
 		startActivity(intent);
 	}
 
 
 public void onClear(View v) {
+	
+	MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
+	button.start();
 	
 	
 	final SharedPreferences scoreData = this.getSharedPreferences(
