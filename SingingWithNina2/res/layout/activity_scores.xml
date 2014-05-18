@@ -11,7 +11,7 @@
         android:layout_alignLeft="@+id/first"
         android:layout_below="@+id/first"
         android:layout_marginTop="16dp"
-        android:text="@string/second"
+        android:text="@string/empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
     <TextView
@@ -21,7 +21,7 @@
         android:layout_alignLeft="@+id/first"
         android:layout_below="@+id/second"
         android:layout_marginTop="16dp"
-        android:text="@string/third"
+        android:text="@string/empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
     <TextView
@@ -31,7 +31,7 @@
         android:layout_alignLeft="@+id/first"
         android:layout_below="@+id/third"
         android:layout_marginTop="16dp"
-        android:text="@string/fourth"
+        android:text="@string/empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
     <TextView
@@ -41,7 +41,7 @@
         android:layout_alignLeft="@+id/first"
         android:layout_below="@+id/fourth"
         android:layout_marginTop="16dp"
-        android:text="@string/fifth"
+        android:text="@string/empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
 
@@ -64,7 +64,7 @@
         android:layout_alignLeft="@+id/highScores"
         android:layout_below="@+id/highScores"
         android:layout_marginTop="50dp"
-        android:text="@string/first"
+        android:text="@string/empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
 

@@ -122,7 +122,7 @@ public class HighScores extends Activity{
 			if (n == 0){
 				TextView playerSend = (TextView) findViewById(R.id.first);
 				Integer score = (Integer)topFiveScores.get(n);
-				String score2 = topFivePlayers.get(n);
+				String score2 = "1. " +topFivePlayers.get(n);
 				CharSequence score3 = (CharSequence) score2;
 				playerSend.append(score3);
 				
@@ -137,7 +137,7 @@ public class HighScores extends Activity{
 			if (n == 1){
 				TextView playerSend = (TextView) findViewById(R.id.second);
 				Integer score = (Integer)topFiveScores.get(n);
-				String score2 = topFivePlayers.get(n);
+				String score2 = "2. " + topFivePlayers.get(n);
 				CharSequence score3 = (CharSequence) score2;
 				playerSend.append(score3);
 				
@@ -149,7 +149,7 @@ public class HighScores extends Activity{
 			if (n == 2){
 				TextView playerSend = (TextView) findViewById(R.id.third);
 				Integer score = (Integer)topFiveScores.get(n);
-				String score2 = topFivePlayers.get(n);
+				String score2 = "3. " + topFivePlayers.get(n);
 				CharSequence score3 = (CharSequence) score2;
 				playerSend.append(score3);
 				
@@ -161,7 +161,7 @@ public class HighScores extends Activity{
 			if (n == 3){
 				TextView playerSend = (TextView) findViewById(R.id.fourth);
 				Integer score = (Integer)topFiveScores.get(n);
-				String score2 = topFivePlayers.get(n);
+				String score2 = "4. " + topFivePlayers.get(n);
 				CharSequence score3 = (CharSequence) score2;
 				playerSend.append(score3);
 				
@@ -173,7 +173,7 @@ public class HighScores extends Activity{
 			if (n == 4){
 				TextView playerSend = (TextView) findViewById(R.id.fifth);
 				Integer score = (Integer)topFiveScores.get(n);
-				String score2 = topFivePlayers.get(n);
+				String score2 = "5. " + topFivePlayers.get(n);
 				CharSequence score3 = (CharSequence) score2;
 				playerSend.append(score3);
 				
