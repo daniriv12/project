@@ -19,6 +19,7 @@ public final class R {
     }
     public static final class id {
         public static final int backButton=0x7f070004;
+        public static final int backButton2=0x7f07001b;
         public static final int clearButton=0x7f07001a;
         public static final int fifth=0x7f070013;
         public static final int fifthScore=0x7f070019;
@@ -28,20 +29,20 @@ public final class R {
         public static final int fourthScore=0x7f070018;
         public static final int highScores=0x7f070014;
         public static final int imageView1=0x7f07000c;
-        public static final int imageView2=0x7f07001f;
-        public static final int infoButton=0x7f07001c;
+        public static final int imageView2=0x7f070020;
+        public static final int infoButton=0x7f07001d;
         public static final int mainLayout=0x7f070000;
         public static final int nameText=0x7f070005;
         public static final int playButton=0x7f07000a;
-        public static final int quitButton=0x7f07001b;
+        public static final int quitButton=0x7f07001c;
         public static final int resultsButton=0x7f07000e;
         public static final int saveButton=0x7f070006;
         public static final int scoreBar=0x7f070003;
-        public static final int scoresButton=0x7f07001d;
+        public static final int scoresButton=0x7f07001e;
         public static final int second=0x7f07000f;
         public static final int secondScore=0x7f070016;
         public static final int singButton=0x7f07000d;
-        public static final int startButton=0x7f07001e;
+        public static final int startButton=0x7f07001f;
         public static final int stopButton=0x7f07000b;
         public static final int subLayout=0x7f070001;
         public static final int textView1=0x7f070008;
@@ -70,16 +71,17 @@ public final class R {
         public static final int g1=0x7f040008;
     }
     public static final class string {
-        public static final int about=0x7f05001a;
+        public static final int about=0x7f05001b;
         public static final int app_name=0x7f050000;
         public static final int back=0x7f050016;
         public static final int clear=0x7f050015;
-        public static final int empty=0x7f050017;
+        public static final int empty=0x7f050018;
         public static final int fifth=0x7f050013;
         public static final int first=0x7f05000f;
         public static final int fourth=0x7f050012;
         public static final int goBackToStart=0x7f05000d;
-        public static final int information=0x7f050019;
+        public static final int goback=0x7f050017;
+        public static final int information=0x7f05001a;
         public static final int intro=0x7f050001;
         public static final int leaderboard=0x7f05000e;
         public static final int melody=0x7f050005;
@@ -87,7 +89,7 @@ public final class R {
         public static final int play=0x7f050002;
         public static final int quit=0x7f050014;
         public static final int results=0x7f050004;
-        public static final int save=0x7f050018;
+        public static final int save=0x7f050019;
         public static final int saveScore=0x7f050008;
         public static final int score=0x7f050007;
         public static final int scores=0x7f05000c;
@@ -95,7 +97,7 @@ public final class R {
         public static final int sing=0x7f050009;
         public static final int start=0x7f05000b;
         public static final int stop=0x7f050003;
-        public static final int thanks=0x7f05001b;
+        public static final int thanks=0x7f05001c;
         public static final int third=0x7f050011;
         public static final int voice=0x7f050006;
     }

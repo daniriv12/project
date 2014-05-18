@@ -198,7 +198,15 @@ public void onClick(View v){
 		button.start();
 		Intent intent = new Intent(this, Start.class);
 		startActivity(intent);
+		
 	}
+
+public void onBack(View v){
+	MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
+	button.start();
+	
+	finish();
+}
 
 
 public void onClear(View v) {
@@ -209,6 +217,8 @@ public void onClear(View v) {
 	
 	final SharedPreferences scoreData = this.getSharedPreferences(
 		      "com.example.singingwithnina2", Context.MODE_PRIVATE);
+	
+	final Intent intent5 = new Intent(this, Start.class);
 	
 	
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -226,7 +236,11 @@ public void onClear(View v) {
                         	toast.show();
                         	
                         	
+                       
+                        	
+                        	
                         	finish();
+                        	startActivity(intent5);
                         	
                         	
                         	
@@ -238,6 +252,7 @@ public void onClear(View v) {
             .setNegativeButton("No", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     dialog.cancel();
+                  
                 }
             });
     AlertDialog alert = builder.create();

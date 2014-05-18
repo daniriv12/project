@@ -27,6 +27,7 @@
     
     <string name="clear">Clear Highscores</string>
      <string name="back">Try Again</string>
+     <string name="goback">Back</string>
      <string name="empty"></string>
      <string name="save">Save Score!</string>
     

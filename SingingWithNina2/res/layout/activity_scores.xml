@@ -144,4 +144,15 @@
         android:textColor="#FF9900"
         android:text="@string/clear" />
 
+    <Button
+        android:id="@+id/backButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/clearButton"
+        android:textColor="#FFFFFF"
+        android:onClick="onBack"
+        android:layout_alignBaseline= "@+id/clearButton"
+        android:text="@string/goback" />
+
 </RelativeLayout>
