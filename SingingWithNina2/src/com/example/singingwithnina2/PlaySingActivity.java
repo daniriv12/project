@@ -67,7 +67,8 @@ public class PlaySingActivity extends Activity{
                 Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
         paint = new Paint();
-        paint.setColor(Color.MAGENTA);
+        paint.setColor(Color.RED);
+        paint.setStrokeWidth(2.0f);
         iv.setImageBitmap(bitmap);
 	
 	}
@@ -120,13 +121,13 @@ public class PlaySingActivity extends Activity{
     	realFreq.add(frequency);
 
         canvas.drawColor(Color.BLACK);
-
+        int x = 0;
         for (int i = 0; i < toTransform[0].length; i++) {
-            int x = i;
             int downy = (int) (100 - (toTransform[0][i] * 10));
             int upy = 100;
 
             canvas.drawLine(x, downy, x, upy, paint);
+            x += 3;
         }
 
         iv.invalidate();
