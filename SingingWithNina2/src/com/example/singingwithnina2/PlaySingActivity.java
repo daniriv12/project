@@ -33,12 +33,15 @@ public class PlaySingActivity extends Activity{
 	Bundle savedInstanceState;
 	
 	
-	
-	
 	ImageView iv;
     Bitmap bitmap;
     Canvas canvas;
     Paint paint;
+    
+    Button results;
+    Button play;
+    Button stop;
+    Button sing;
     
 	
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +54,14 @@ public class PlaySingActivity extends Activity{
 	
 		realFreq = new ArrayList<Integer>();
 		genFreq = melodyGenerator.Generate();
+		
+		Boolean playClickable = true;
 
 	
-		Button stop = (Button) this.findViewById(R.id.stopButton);
-		Button play = (Button) this.findViewById(R.id.playButton);
-		Button sing = (Button) this.findViewById(R.id.singButton);
-		Button results = (Button) this.findViewById(R.id.resultsButton);
+		stop = (Button) this.findViewById(R.id.stopButton);
+		play = (Button) this.findViewById(R.id.playButton);
+		sing = (Button) this.findViewById(R.id.singButton);
+		results = (Button) this.findViewById(R.id.resultsButton);
 		
 		stop.setSoundEffectsEnabled(false);
 		play.setSoundEffectsEnabled(false);
@@ -85,6 +90,20 @@ public class PlaySingActivity extends Activity{
 			break;
 		case R.id.playButton:
 			melodyGenerator.Play();
+			play.setClickable(false);
+			new CountDownTimer (5000, 1000){
+				
+	        	public void onTick(long millisUntilFinished){
+	      
+	        	}
+	        	
+	        	public void onFinish(){
+	        		play.setClickable(true);
+	        		
+	        	}
+			}.start();
+			
+		
 			break;
 			
 		case R.id.singButton:
