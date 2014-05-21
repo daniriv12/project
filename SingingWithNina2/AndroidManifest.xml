@@ -18,17 +18,21 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.singingwithnina2.PlaySingActivity"
-            android:label="Sing away!" >
+            android:label="Sing away!"
+            android:screenOrientation="portrait"
+            >
             
 
         </activity>
         <activity
             android:name="com.example.singingwithnina2.GrapherTwo"
-            android:label="Results">
+            android:label="Results"
+            android:screenOrientation="portrait">
            
         </activity>
         <activity
-            android:name="com.example.singingwithnina2.Start">
+            android:name="com.example.singingwithnina2.Start"
+            android:screenOrientation="portrait">
             <intent-filter>
                 
                 <action android:name="android.intent.action.MAIN" />
@@ -40,13 +44,15 @@
         </activity>
         <activity
             android:name="com.example.singingwithnina2.HighScores"
-            android:label="Top Players">
+            android:label="Top Players"
+            android:screenOrientation="portrait">
            
         </activity>
         
         <activity
             android:name="com.example.singingwithnina2.Information"
-            android:label="About">
+            android:label="About"
+            android:screenOrientation="portrait">
            
         </activity>
         
