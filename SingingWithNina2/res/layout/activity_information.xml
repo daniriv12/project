@@ -40,12 +40,12 @@
 
     <Button
         android:id="@+id/backButton"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:onClick="onClick"
-        android:layout_centerHorizontal="true"
-        android:text="@string/goBackToStart"
+        android:text="@string/goback"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>

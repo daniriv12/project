@@ -33,6 +33,7 @@ public class MelodyGenerator{
 
 
 
+
 	private int streamID;
 	
 
@@ -48,6 +49,7 @@ public class MelodyGenerator{
 		toneValues.put(4, 392);
 		toneValues.put(5, 440);
 		toneValues.put(6, 494);
+		
 		
 		
 		
@@ -111,7 +113,6 @@ public class MelodyGenerator{
 	}
 	
 	public void Play(){
-		
 		new CountDownTimer(5000, 1000) {
 			int counter = 0;
 
