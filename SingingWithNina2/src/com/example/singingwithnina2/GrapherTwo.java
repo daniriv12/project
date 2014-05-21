@@ -181,7 +181,7 @@ public class GrapherTwo extends Activity{
 		SharedPreferences scoreData = this.getSharedPreferences(
 			      "com.example.singingwithnina2", Context.MODE_PRIVATE);
 		
-		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
+		
 		
 		
 		
@@ -190,19 +190,19 @@ public class GrapherTwo extends Activity{
 		default:
 			break;
 		case R.id.backButton:
-			button.start();
+			finish();
 			Intent intent = new Intent(this, PlaySingActivity.class);
 			startActivity(intent);
 			break;
 			
 		case R.id.saveButton:
-			button.start();
+			
 			nameText   = (EditText)findViewById(R.id.nameText);
 			String name = nameText.getText().toString();
 			
 			
 			scoreData.edit().putInt(name, finalscore).commit();
-			
+			finish();
 			Intent intent2 = new Intent(this, HighScores.class);
 			startActivity(intent2);
 			break;

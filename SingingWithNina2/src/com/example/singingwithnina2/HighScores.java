@@ -194,25 +194,18 @@ public class HighScores extends Activity{
 		
 }
 public void onClick(View v){
-		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
-		button.start();
+		finish();
 		Intent intent = new Intent(this, Start.class);
 		startActivity(intent);
 		
+		
 	}
 
-public void onBack(View v){
-	MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
-	button.start();
-	
-	finish();
-}
 
 
 public void onClear(View v) {
 	
-	MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
-	button.start();
+	
 	
 	
 	final SharedPreferences scoreData = this.getSharedPreferences(

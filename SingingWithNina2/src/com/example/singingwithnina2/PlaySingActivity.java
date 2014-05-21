@@ -77,8 +77,6 @@ public class PlaySingActivity extends Activity{
 	public void buttonClicked(View v){
 		
 		
-		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
-		
 		
 		switch(v.getId()) {
 		default:
@@ -92,12 +90,12 @@ public class PlaySingActivity extends Activity{
 			break;
 			
 		case R.id.stopButton:
-			button.start();
+	
 			melodyGenerator.Generate();
 			break;
 			
 		case R.id.resultsButton:
-			button.start();
+		    finish();
 			Intent intent2 = new Intent(this, HighScores.class);
 			startActivity(intent2);
 			break;
@@ -113,6 +111,7 @@ public class PlaySingActivity extends Activity{
 		data.putIntegerArrayList("melody", generateListReadyForGraphing(genFreq));
 		data.putIntegerArrayList("sing", realFreq);
 		intent.putExtras(data);
+		finish();
 		startActivity(intent);
 	
 	}

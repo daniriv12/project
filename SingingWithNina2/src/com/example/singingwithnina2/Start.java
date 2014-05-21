@@ -41,25 +41,25 @@ public class Start extends Activity{
 	
 public void onClick(View v){
 	
-		MediaPlayer button = MediaPlayer.create(this, R.raw.button2); //LINE ONE TO ADDING A BUTTON SOUND!!
+		
 				
 		switch(v.getId()) {
 		default:
 			break;
 		case R.id.startButton:
-			button.start();  //LINE TWO TO ADDING A BUTTON SOUND!!
+			finish();
 			Intent intent = new Intent(this, PlaySingActivity.class);
 			startActivity(intent);
 			break;
 			
 		case R.id.scoresButton:
-			button.start();
+			finish();
 			Intent intent2 = new Intent(this, HighScores.class);
 			startActivity(intent2);
 			break;
 			
 		case R.id.infoButton:
-			button.start();
+			finish();
 			Intent intent3 = new Intent(this, Information.class);
 			startActivity(intent3);
 			break;
@@ -70,9 +70,7 @@ public void onClick(View v){
 
 public void onQuit(View v) {
 	
-	MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
-	button.start();
-	
+
 	
 	
     AlertDialog.Builder builder = new AlertDialog.Builder(this);

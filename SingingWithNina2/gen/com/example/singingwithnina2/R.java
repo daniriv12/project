@@ -19,7 +19,6 @@ public final class R {
     }
     public static final class id {
         public static final int backButton=0x7f070004;
-        public static final int backButton2=0x7f07001b;
         public static final int clearButton=0x7f07001a;
         public static final int fifth=0x7f070013;
         public static final int fifthScore=0x7f070019;
@@ -29,20 +28,20 @@ public final class R {
         public static final int fourthScore=0x7f070018;
         public static final int highScores=0x7f070014;
         public static final int imageView1=0x7f07000c;
-        public static final int imageView2=0x7f070020;
-        public static final int infoButton=0x7f07001d;
+        public static final int imageView2=0x7f07001f;
+        public static final int infoButton=0x7f07001c;
         public static final int mainLayout=0x7f070000;
         public static final int nameText=0x7f070005;
         public static final int playButton=0x7f07000a;
-        public static final int quitButton=0x7f07001c;
+        public static final int quitButton=0x7f07001b;
         public static final int resultsButton=0x7f07000e;
         public static final int saveButton=0x7f070006;
         public static final int scoreBar=0x7f070003;
-        public static final int scoresButton=0x7f07001e;
+        public static final int scoresButton=0x7f07001d;
         public static final int second=0x7f07000f;
         public static final int secondScore=0x7f070016;
         public static final int singButton=0x7f07000d;
-        public static final int startButton=0x7f07001f;
+        public static final int startButton=0x7f07001e;
         public static final int stopButton=0x7f07000b;
         public static final int subLayout=0x7f070001;
         public static final int textView1=0x7f070008;

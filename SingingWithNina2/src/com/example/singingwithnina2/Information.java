@@ -20,8 +20,8 @@ public class Information extends Activity{
 	
 	
 public void onClick(View v){
-		MediaPlayer button = MediaPlayer.create(this, R.raw.button2);
-		button.start();
+	
+		finish();
 		Intent intent = new Intent(this, Start.class);
 		startActivity(intent);
 	}	
