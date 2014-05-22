@@ -216,7 +216,7 @@ public class GrapherTwo extends Activity{
 	@Override
 	public void onBackPressed(){
 		finish();
-		Intent intent = new Intent(GrapherTwo.this, PlaySingActivity.class);
+		Intent intent = new Intent(this, PlaySingActivity.class);
 		startActivity(intent);
 	}
 	

@@ -203,9 +203,7 @@ public void onClick(View v){
 
 @Override
 public void onBackPressed(){
-	finish();
-	Intent intent = new Intent(HighScores.this, Start.class);
-	startActivity(intent);
+	
 }
 
 
@@ -230,7 +228,7 @@ public void onClear(View v) {
                         	scoreData.edit().clear().commit();
                         	
                         	Toast toast = Toast.makeText(getApplicationContext(), "Scores cleared.",
-                        			   Toast.LENGTH_LONG);
+                        			   Toast.LENGTH_SHORT);
                         	toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                         	toast.show();
                         	
