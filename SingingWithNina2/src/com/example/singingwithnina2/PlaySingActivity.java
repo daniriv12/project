@@ -81,6 +81,14 @@ public class PlaySingActivity extends Activity{
 
 	
 	}
+	
+	@Override
+	public void onBackPressed(){
+		finish();
+		Intent intent = new Intent(PlaySingActivity.this, Start.class);
+		startActivity(intent);
+	}
+	
 	public void buttonClicked(View v){
 		
 		

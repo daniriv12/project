@@ -201,6 +201,12 @@ public void onClick(View v){
 		
 	}
 
+@Override
+public void onBackPressed(){
+	finish();
+	Intent intent = new Intent(HighScores.this, Start.class);
+	startActivity(intent);
+}
 
 
 public void onClear(View v) {
