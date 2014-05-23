@@ -48,7 +48,7 @@ public void onClick(View v){
 			break;
 		case R.id.startButton:
 			finish();
-			Intent intent = new Intent(this, PlaySingActivity.class);
+			Intent intent = new Intent(this, Instrument.class);
 			startActivity(intent);
 			break;
 			

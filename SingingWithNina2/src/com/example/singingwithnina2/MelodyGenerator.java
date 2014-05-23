@@ -37,7 +37,7 @@ public class MelodyGenerator{
 	private int streamID;
 	
 
-	public MelodyGenerator(Activity activity){
+	public MelodyGenerator(Activity activity, String instrument){
 		
 		generatedMelody = new ArrayList<Integer>();
 		freq = new ArrayList<Integer>();
@@ -54,14 +54,26 @@ public class MelodyGenerator{
 		
 		
 		soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
-
-		C1 = soundPool.load(activity, R.raw.c1, 1);
-		D1 = soundPool.load(activity, R.raw.d1, 1);
-		E1 = soundPool.load(activity, R.raw.e1, 1);
-		F1 = soundPool.load(activity, R.raw.f1, 1);
-		G1 = soundPool.load(activity, R.raw.g1, 1);
-		A1 = soundPool.load(activity, R.raw.a1, 1);
-		B1 = soundPool.load(activity, R.raw.b1, 1);
+		
+		if(instrument.equals("guitar")) {
+			C1 = soundPool.load(activity, R.raw.guitar_c, 1);
+			D1 = soundPool.load(activity, R.raw.guitar_d, 1);
+			E1 = soundPool.load(activity, R.raw.guitar_e, 1);
+			F1 = soundPool.load(activity, R.raw.guitar_f, 1);
+			G1 = soundPool.load(activity, R.raw.guitar_g, 1);
+			A1 = soundPool.load(activity, R.raw.guitar_a, 1);
+			B1 = soundPool.load(activity, R.raw.guitar_b, 1);
+		}
+		else {
+			C1 = soundPool.load(activity, R.raw.piano_c, 1);
+			D1 = soundPool.load(activity, R.raw.piano_d, 1);
+			E1 = soundPool.load(activity, R.raw.piano_e, 1);
+			F1 = soundPool.load(activity, R.raw.piano_f, 1);
+			G1 = soundPool.load(activity, R.raw.piano_g, 1);
+			A1 = soundPool.load(activity, R.raw.piano_a, 1);
+			B1 = soundPool.load(activity, R.raw.piano_b, 1);
+		}
+		
 		Log.e("TONENUMEBR", B1 + "");
 		
 

@@ -50,7 +50,12 @@ public class PlaySingActivity extends Activity{
 		this.savedInstanceState = savedInstanceState;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_playsing);
-		melodyGenerator = new MelodyGenerator(this);
+		Bundle extras = getIntent().getExtras();
+		String instrument;
+		if(extras == null)
+			instrument = "piano";
+		else instrument = getIntent().getExtras().getString("instrument");
+		melodyGenerator = new MelodyGenerator(this,instrument);
 		
 		audioProcessor = new AudioProcessing(this, new Handler());
 	

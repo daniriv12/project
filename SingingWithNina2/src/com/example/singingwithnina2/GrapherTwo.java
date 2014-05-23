@@ -191,7 +191,7 @@ public class GrapherTwo extends Activity{
 			break;
 		case R.id.backButton:
 			finish();
-			Intent intent = new Intent(this, PlaySingActivity.class);
+			Intent intent = new Intent(this, Instrument.class);
 			startActivity(intent);
 			break;
 			
