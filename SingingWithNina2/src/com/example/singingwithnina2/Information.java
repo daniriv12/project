@@ -25,5 +25,12 @@ public void onClick(View v){
 		Intent intent = new Intent(this, Start.class);
 		startActivity(intent);
 	}	
+
+@Override
+public void onBackPressed(){
+	finish();
+	Intent intent = new Intent(Information.this, Start.class);
+	startActivity(intent);
+}
 	
 }

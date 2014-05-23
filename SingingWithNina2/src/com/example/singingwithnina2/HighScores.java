@@ -201,6 +201,10 @@ public void onClick(View v){
 		
 	}
 
+@Override
+public void onBackPressed(){
+	
+}
 
 
 public void onClear(View v) {
@@ -224,7 +228,7 @@ public void onClear(View v) {
                         	scoreData.edit().clear().commit();
                         	
                         	Toast toast = Toast.makeText(getApplicationContext(), "Scores cleared.",
-                        			   Toast.LENGTH_LONG);
+                        			   Toast.LENGTH_SHORT);
                         	toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                         	toast.show();
                         	
