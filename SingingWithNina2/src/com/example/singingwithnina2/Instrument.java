@@ -11,6 +11,14 @@ public class Instrument extends Activity{
 	private ImageView guitar;
 	private ImageView piano;
 	
+	
+	@Override
+	public void onBackPressed(){
+		finish();
+		Intent intent = new Intent(this, Start.class);
+		startActivity(intent);
+	}
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_instrument);
