@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Singing with Nina</string>
-    <string name="intro">Press play when youre ready to hear your melody and sing when youre ready to sing!</string>
+    <string name="intro">Press "Play Melody! when you are ready to hear the melody and "Sing!" when you are ready!</string>
     
     <string name="play">Play melody!</string>
     <string name="stop">Change Melody</string>
